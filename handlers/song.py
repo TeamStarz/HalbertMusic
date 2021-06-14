@@ -51,7 +51,7 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "❌ Lagu Tidak ditemukan.\n\nCoba Masukan nama lagu yang lebih jelas, contoh /song artis - lagu."
+            "❌ Lagu Tidak Ditemukan.\n\nCoba Masukan Nama Lagu Yang Lebih Jelas, Contoh /song (Artis) - (Judul Lagu)."
         )
         print(str(e))
         return
@@ -61,7 +61,7 @@ def song(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = '**🎵 Diunggah oleh [Hendra](t.me/IamYourEnemy)**'
+        rep = '**🎶 Uploaded by [Rezy](https://t.me/Reeeeeezy).**'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -253,10 +253,10 @@ def time_to_seconds(time):
 async def jssong(_, message):
     global is_downloading
     if len(message.command) < 2:
-        await message.reply_text("/saavn (judul lagu).")
+        await message.reply_text("/saavn (Judul Lagu).")
         return
     if is_downloading:
-        await message.reply_text("Unduhan yang lain sedang berlangsung, coba lagi nanti")
+        await message.reply_text("Unduhan Yang Lain Sedang Berlangsung, mohon Coba Lagi Nanti")
         return
     is_downloading = True
     text = message.text.split(None, 1)[1]
@@ -289,10 +289,10 @@ async def jssong(_, message):
 async def deezsong(_, message):
     global is_downloading
     if len(message.command) < 2:
-        await message.reply_text("/deezer (judul lagu).")
+        await message.reply_text("/deezer (Judul Lagu).")
         return
     if is_downloading:
-        await message.reply_text("Unduhan yang lain sedang berlangsung, coba lagi nanti.")
+        await message.reply_text("Unduhan Yang Lain Sedang Berlangsung, Mohon Coba Lagi Nanti.")
         return
     is_downloading = True
     text = message.text.split(None, 1)[1]
@@ -303,9 +303,9 @@ async def deezsong(_, message):
         title = songs[0].title
         url = songs[0].url
         artist = songs[0].artist
-        await m.edit("Mendownload lagu...")
+        await m.edit("Mendownload Lagu...")
         song = await download_song(url)
-        await m.edit("Mengupload lagu...")
+        await m.edit("Mengupload Lagu...")
         await message.reply_audio(audio=song, title=title,
                                   performer=artist)
         os.remove(song)
@@ -321,16 +321,16 @@ async def deezsong(_, message):
 async def ytmusic(client,message: Message):
     global is_downloading
     if is_downloading:
-        await message.reply_text("Unduhan yang lain sedang berlangsung, coba lagi nanti.")
+        await message.reply_text("Unduhan Yang Lain Sedang Berlangsung, Mohon Coba Lagi Nanti.")
         return
 
     urlissed = get_text(message)
 
     pablo =  await client.send_message(
             message.chat.id,
-            f"`Mendownload {urlissed} dari youtube, tunggu sebentar!`")
+            f"`Mendownload {urlissed} Dari Youtube, Mohon Tunggu Sebentar!`")
     if not urlissed:
-        await pablo.edit("Sintax, Perintah tidak valid. Silahkan periksa menu help untuk mengetahui lebih lanjut!")
+        await pablo.edit("Sintax, Perintah Tidak Valid. Silahkan Periksa Menu Help Untuk Mengetahui Lebih Lanjut!")
         return
     
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
@@ -366,7 +366,7 @@ async def ytmusic(client,message: Message):
 
             if duration > 8:
                 await pablo.edit(
-                    f"❌ Video berdurasi lebih dari 8 menit tidak diperbolehkan, video yang diperbolehkan berdurasi {duration} minute(s)"
+                    f"❌ Video Berdurasi Lebih Dari 8 Menit Tidak Diperbolehkan, Video Yang Diperbolehkan Berdurasi {duration} Minute(s)"
                 )
                 is_downloading = False
                 return
@@ -374,7 +374,7 @@ async def ytmusic(client,message: Message):
             
     
     except Exception as e:
-        #await pablo.edit(event, f"**Gagal mengunduh** \n**Terjadi kesalahan :** `{str(e)}`")
+        #await pablo.edit(event, f"**Gagal Mengunduh** \n**Terjadi Kesalahan :** `{str(e)}`")
         is_downloading = False
         return
     
