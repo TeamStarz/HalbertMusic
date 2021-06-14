@@ -109,7 +109,7 @@ async def playlist(client, message):
     global que
     queue = que.get(message.chat.id)
     if not queue:
-        await message.reply_text('Tidak ada daftar apapun!')
+        await message.reply_text('Tidak Ada Daftar Putar Apapun!')
     temp = []
     for t in queue:
         temp.append(t)
@@ -184,7 +184,7 @@ async def p_cb(b, cb):
     if type_ == 'playlist':           
         queue = que.get(cb.message.chat.id)
         if not queue:   
-            await cb.message.edit('Tidak Ada Daftar Apapun!')
+            await cb.message.edit('Tidak Ada Daftar Putar Apapun!')
         temp = []
         for t in queue:
             temp.append(t)
@@ -355,7 +355,7 @@ async def play(_, message: Message):
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/feec24f734e71d5da0802.jpg"
+        thumb_name = "https://telegra.ph/file/337d37f064475a7417159.png"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -406,7 +406,7 @@ async def play(_, message: Message):
         )
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://telegra.ph/file/feec24f734e71d5da0802.jpg"
+            thumb_name = "https://telegra.ph/file/337d37f064475a7417159.png"
             duration = "NaN"
             views = "NaN"
         keyboard = InlineKeyboardMarkup(
