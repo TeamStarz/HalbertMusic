@@ -5,29 +5,28 @@ from config import BOT_NAME as bn
 
 @Client.on_message(filters.command("start") & filters.private & ~filters.channel)
 async def start(_, message: Message):
+    await message.reply_sticker("CAACAgIAAxkBAAEKL_1gt842-B5SnR5eHrlBsfTviEt2GwACrAsAAt_YUUnNC_qAE0qWKR8E")
     await message.reply_text(
-        f"""<b>👋🏻 Hai {message.from_user.first_name}!</b>
+        f"""<b>Hello {message.from_user.first_name}!</b>
 
-Aku adalah Irama Musik Bot, bot sumber terbuka yang memungkinkan Anda memutar musik di grup telegram Anda.
-Tidak mengetahui cara memakainya? Baca panduan pemakaian agar langsung memahami tanpa bertanya!
-━━━━━━━━━━━━━━━━━━━━━━
-Bot : @IramaMusikBot - Asisten : @Irama_Musik
-Dikelola oleh 🌻 [Hendra](t.me/IamYourEnemy). Thanks! 
+__Aku Adalah Zeed Music Bot, Bot Sumber Terbuka Yang Memungkinkan Anda Untuk Mengunduh Maupun Memutar Musik di Obrolan Suara Grup Telegram Anda.__
+┈──────────────────────┈
+➠ Invite __[Assistance](https://t.me/Zeed_RobotAss)__ Masuk Kedalam Grup Anda.\n ➠ Untuk Info, dan Panduan Selengkapnya Tekan Tombol Panduan di Bawah, Terima kasih! Have Fun!!\n\n➥ Dikelola Oleh @Reeeeeezy
         """,
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
                     InlineKeyboardButton(
-                        "📒 Panduan Pemakaian", url="https://telegra.ph/IIrama-Musik-04-22")
+                        "Panduan", url="https://t.me/ZeedGoodBoys/14")
                   ],[
                     InlineKeyboardButton(
-                        "📊 Channel Support", url="https://t.me/AkuUserBot"
+                        "Channel", url="https://t.me/Rezy_IsBack"
                     ),
                     InlineKeyboardButton(
-                        "🔉 Channel Bucin", url="https://t.me/kutipankataaa") 
+                        "Group Music", url="https://t.me/ZeeedMusic") 
                   ],[
                     InlineKeyboardButton(
-                        "📈 Group Support", url="https://t.me/VcgSupportGroup"
+                        "Instagram", url="https://www.instagram.com/ridhoalfahrezi._"
                     )
                 ]
             ]
@@ -37,15 +36,15 @@ Dikelola oleh 🌻 [Hendra](t.me/IamYourEnemy). Thanks!
 
 @Client.on_message(filters.command("reload") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
-      await message.reply_text("""**🎧 Pemutar Musik Sedang Online**""",
+      await message.reply_text("""'Zeed - Music' **Sedang Online**""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Group Support", url="https://t.me/VcgSupportGroup"
+                        "Group Music", url="https://t.me/ZeeedMusic"
                     ),
                     InlineKeyboardButton(
-                        "Owner Bot", url="https://t.me/IamYourEnemy"
+                        "Rezy 🇲🇨", url="https://t.me/Reeeeeezy"
                     )
                 ]
             ]
@@ -54,15 +53,15 @@ async def gstart(_, message: Message):
 
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
-      await message.reply_text("""**🎧 Pemutar Musik Sedang Online**""",
+      await message.reply_text("""'Zeed - Musik' **Sedang Online**""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "⚡ Pemilik ⚡", url="https://t.me/VcgSupportGroup") 
+                        "Instagram", url="https://www.instagram.com/ridhoalfahrezi._") 
                 ],[
                     InlineKeyboardButton(
-                        "Group Support", url="https://t.me/VcgSupportGroup"
+                        "Group Music", url="https://t.me/ZeeedMusic"
                     )
                 ]
             ]
