@@ -268,7 +268,7 @@ async def m_cb(b, cb):
         await cb.message.edit(msg)  
 
     elif type_ == 'cls':          
-        await cb.answer('Menu ditutup')
+        await cb.answer('Menu Di Tutup')
         await cb.message.delete()       
 
     
