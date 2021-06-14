@@ -23,7 +23,7 @@ async def update_admin(client, message):
     for u in admins:
         new_ads.append(u.user.id)
     a[message.chat.id] = new_ads
-    #await message.reply_text('Sucessfully updated admin list in **{}**'.format(message.chat.title))
+    #await message.reply_text('Sucessfully Updated Admin List In **{}**'.format(message.chat.title))
 
 
 
@@ -32,14 +32,14 @@ async def update_admin(client, message):
 @errors
 async def pause(_, message: Message):
     callsmusic.pytgcalls.pause_stream(message.chat.id)
-    await message.reply_text("▶️ Musik dijeda!")
+    await message.reply_text("▶️ Musik Di Jeda!")
 
 
 @Client.on_message(command("resume") & other_filters)
 @errors
 async def resume(_, message: Message):
     callsmusic.pytgcalls.resume_stream(message.chat.id)
-    await message.reply_text("⏸ Musik dilanjutkan!")
+    await message.reply_text("⏸ Musik Di Lanjutkan!")
 
 
 @Client.on_message(command("end") & other_filters)
@@ -51,7 +51,7 @@ async def stop(_, message: Message):
         pass
 
     callsmusic.pytgcalls.leave_group_call(message.chat.id)
-    await message.reply_text("⏹ Musik dihentikan!")
+    await message.reply_text("⏹ Musik Di Hentikan!")
 
 
 @Client.on_message(command("skip") & other_filters)
@@ -60,14 +60,14 @@ async def skip(_, message: Message):
     chat_id = message.chat.id
 
     sira.task_done(chat_id)
-    await message.reply_text("⏭ Memproses...")
+    await message.reply_text("⏳ Memproses...")
     if callsmusic.queues.is_empty(message.chat.id):
         callsmusic.pytgcalls.leave_group_call(chat_id)
-        await message.reply_text("Tidak ada musik dalam antrian")
+        await message.reply_text("❗ Tidak Ada Musik Aalam Antrian")
     else:
         callsmusic.pytgcalls.change_stream(
                 message.chat.id,
                 callsmusic.queues.get(message.chat.id)["file"]
             )
 
-        await message.reply_text("🔂 Melanjutkan ke lagu berikutnya!")
+        await message.reply_text("Melanjutkan Ke Lagu Berikutnya!")
