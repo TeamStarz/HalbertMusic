@@ -140,8 +140,8 @@ def updated_stats(chat, queue, vol=100):
         if len(que) > 0:
             stats += '\n\n'
             stats += '• Volume : {}%\n'.format(vol)
-            stats += '• Dalam antrian : `{}`\n'.format(len(que))
-            stats += '• Sedang dimainkan : {}\n'.format(queue[0][0])
+            stats += '• Dalam Antrian : `{}`\n'.format(len(que))
+            stats += '• Sedang Di Mainkan : {}\n'.format(queue[0][0])
             stats += '• Permintaan : {}'.format(queue[0][1].mention)
     else:
         stats = None
@@ -611,7 +611,7 @@ async def deezer(client: Client, message_: Message):
         loc = file_path
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
-        await res.edit_text(f"**IramaMusik**=Queued At Position {position} in {message.chat.title}")
+        await res.edit_text(f"**Zeed - Music** Queued At Position {position} in {message.chat.title}")
     else:
         await res.edit_text("Playing...")
         chat_id = message_.chat.id
@@ -631,6 +631,6 @@ async def deezer(client: Client, message_: Message):
         reply_markup=keyboard,
         photo="final.png",
         caption=f"🏷 **Judul:** [{title[:60]}]({url})\n⏱ **Durasi:** {duration}\n" \
-               + f"🔮 **Status:** `Playing`\n🎧 **Permintaan:** {requested_by}"
+               + f"🔮 **Status:** `Playing`\n🎧 **Permintaan:** {message.from_user.mention}"
         ),
     os.remove("final.png")
