@@ -158,7 +158,7 @@ def r_ply(type_):
                 InlineKeyboardButton('Playlist', 'playlist'),
                 InlineKeyboardButton(
                         text="Panduan",
-                        url=f"https://t.me/ZeedGoodBoys/14")
+                        url=f"https://t.me/ZeedGoodBoys/21")
                 
             ],
             [
@@ -197,7 +197,7 @@ async def p_cb(b, cb):
         temp.pop(0)
         if temp:
              msg += '\n\n'
-             msg = "**• Daftar Lagu Yang Sedang Diputar Di Grup {}:**".format(cb.message.chat.title)
+             msg = "**• Daftar Lagu Yang Akan Diputar Di Grup {}:**".format(cb.message.chat.title)
              for song in temp:
                  name = song[0]
                  usr = song[1].mention(style='md')
@@ -299,7 +299,7 @@ async def m_cb(b, cb):
             if callsmusic.queues.is_empty(chat_id):
                 callsmusic.pytgcalls.leave_group_call(chat_id)
                 
-                await cb.message.edit('- Tidak Ada Lagi Daftar Putar...\n- Meninggalkan obrolan suara!')
+                await cb.message.edit('◉ Tidak Ada Lagi Daftar Putar...\n◉ Meninggalkan Obrolan Suara!')
             else:
                 callsmusic.pytgcalls.change_stream(
                     chat_id,
@@ -307,7 +307,7 @@ async def m_cb(b, cb):
                 )
                 await cb.answer('Skipped')
                 await cb.message.edit((m_chat, qeue), reply_markup=r_ply(the_data))
-                await cb.message.reply_text(f'• Melewati Lagu\n• Sedang Dimainkan: **{qeue[0][0]}**')
+                await cb.message.reply_text(f'◉ Melewati Lagu\n◉ Sedang Dimainkan: **{qeue[0][0]}**')
 
     else:      
         if chat_id in callsmusic.pytgcalls.active_calls:
@@ -325,7 +325,7 @@ async def m_cb(b, cb):
 async def play(_, message: Message):
     
 
-    lel = await message.reply("⏳ Processing Sounds...")    
+    lel = await message.reply("⏳ Processing...")    
     sender_id = message.from_user.id
     sender_name = message.from_user.first_name
     
@@ -337,8 +337,8 @@ async def play(_, message: Message):
                         text="Instagram",
                         url=f"https://www.instagram.com/ridhoalfahrezi._"),
                     InlineKeyboardButton(
-                        text="Group Music",
-                        url=f"https://t.me/ZeeedMusic"),
+                        text="Channel",
+                        url=f"https://t.me/Rezy_IsBack"),
                 
             ]                            
             ]
@@ -366,8 +366,8 @@ async def play(_, message: Message):
                         text="Instagram",
                         url=f"https://www.instagram.com/ridhoalfahrezi._"),
                     InlineKeyboardButton(
-                        text="Group Music",
-                        url=f"https://t.me/ZeeedMusic"),
+                        text="Channel",
+                        url=f"https://t.me/Rezy_IsBack"),
                 
             ]                            
             ]
@@ -398,8 +398,8 @@ async def play(_, message: Message):
                         text="Instagram",
                         url=f"https://www.instagram.com/ridhoalfahrezi._"),
                     InlineKeyboardButton(
-                        text="Group Music",
-                        url=f"https://t.me/ZeeedMusic"),
+                        text="Channel",
+                        url=f"https://t.me/Rezy_IsBack"),
                 
             ]                            
             ]
@@ -416,8 +416,8 @@ async def play(_, message: Message):
                         text="Instagram",
                         url=f"https://www.instagram.com/ridhoalfahrezi._"),
                     InlineKeyboardButton(
-                        text="Group Music",
-                        url=f"https://t.me/ZeeedMusic"),
+                        text="Channel",
+                        url=f"https://t.me/Rezy_IsBack"),
                 
             ]                            
             ]
@@ -437,7 +437,7 @@ async def play(_, message: Message):
         for i in message.command[1:]:
             query += ' ' + str(i)
         print(query)
-        await lel.edit("⏳ **Processing** Sounds...")
+        await lel.edit("⏳ **Processing**...")
         ydl_opts = {"format": "bestaudio[ext=m4a]"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -466,8 +466,8 @@ async def play(_, message: Message):
                         text="Instagram",
                         url=f"https://www.instagram.com/ridhoalfahrezi._"),
                     InlineKeyboardButton(
-                        text="Group Music",
-                        url=f"https://t.me/ZeeedMusic"),
+                        text="Channel",
+                        url=f"https://t.me/Rezy_IsBack"),
                 
             ]                            
             ]
@@ -525,7 +525,7 @@ async def deezer(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name =  "Zeed-Music"
+        user.first_name =  "Libra-Robot"
     usar = user
     wew = usar.id
     try:
@@ -538,7 +538,7 @@ async def deezer(client: Client, message_: Message):
                               invitelink = await client.export_chat_invite_link(chid)
                           except:
                               await lel.edit(
-                                  "#Jadikan Aku Admin Terlebih Dahulu**",
+                                  "◉ Jadikan @LibraMusic_bot Admin Terlebih Dahulu!**",
                               )
                               return
 
@@ -546,7 +546,7 @@ async def deezer(client: Client, message_: Message):
                               await USER.join_chat(invitelink)
                               await USER.send_message(message_.chat.id,"**Saya bergabung kesini didedikasi untuk memutar/mendownload lagu dan musik**")
                               await lel.edit(
-                                  "**@Zeed_RobotAss Bergabung Ke Dalam Grup**",
+                                  "**@LibraAssistance Bergabung Ke Dalam Grup**",
                               )
 
                           except UserAlreadyParticipant:
@@ -554,8 +554,8 @@ async def deezer(client: Client, message_: Message):
                           except Exception as e:
                               #print(e)
                               await lel.edit(
-                                  f"**#Maaf @Zeed_RobotAss Tidak Dapat Bergabung Ke Dalam Grup Anda, Pastikan Dia Tidak Di Banned**"
-                                   "\n\n**Atau Tambahkan @Zeed_RobotAss Secara Manual Dengan Tambahkan Anggota!**",
+                                  f"**◉ Maaf @LibraAssitance Tidak Dapat Bergabung Ke Dalam Grup Anda, Pastikan Dia Tidak Di Banned**"
+                                   "\n\n**Atau Tambahkan @LibraAssistance Secara Manual Dengan Tambahkan Anggota!**",
                               )
                               pass
     try:
@@ -563,7 +563,7 @@ async def deezer(client: Client, message_: Message):
         #lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"**#Masukkan @Zeed_RobotAss Terlebih Dahulu**"
+            f"**◉ Masukkan @LibraAssistance Terlebih Dahulu**"
         )
         return                            
     requested_by = message_.from_user.first_name   
@@ -571,7 +571,7 @@ async def deezer(client: Client, message_: Message):
     text = message_.text.split(" ", 1)
     queryy = text[1]
     res = lel
-    await res.edit(f"Mencari Untuk **{queryy}** Via Deezer")
+    await res.edit(f"Mencari **{queryy}** Via Deezer")
     try:
         arq = ARQ("https://thearq.tech")
         r = await arq.deezer(query=queryy, limit=1)
@@ -593,8 +593,8 @@ async def deezer(client: Client, message_: Message):
                         text="Instagram",
                         url=f"https://www.instagram.com/ridhoalfahrezi._"),
                     InlineKeyboardButton(
-                        text="Group Music",
-                        url=f"https://t.me/ZeeedMusic"),
+                        text="Channel",
+                        url=f"https://t.me/Rezy_IsBack"),
                 
             ]                            
             ]
@@ -611,7 +611,7 @@ async def deezer(client: Client, message_: Message):
         loc = file_path
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
-        await res.edit_text(f"**Zeed - Music** Queued At Position {position} in {message.chat.title}")
+        await res.edit_text(f"**Libra Robot** Queued At Position {position} in {message.chat.title}")
     else:
         await res.edit_text("Playing...")
         chat_id = message_.chat.id
