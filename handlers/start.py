@@ -9,21 +9,24 @@ async def start(_, message: Message):
     await message.reply_text(
         f"""<b>Hello {message.from_user.first_name}!</b>
 
-__Aku Adalah Zeed Music Bot, Bot Sumber Terbuka Yang Memungkinkan Anda Untuk Mengunduh Maupun Memutar Musik di Obrolan Suara Grup Telegram Anda.__
+__Aku Adalah Libra Robot, Bot Sumber Terbuka Yang Memungkinkan Anda Untuk Mengunduh Maupun Memutar Musik di Obrolan Suara Grup Telegram Anda Dengan Mudah.__
 ┈──────────────────────┈
-➠ Invite __[Assistance](https://t.me/Zeed_RobotAss)__ Masuk Kedalam Grup Anda.\n ➠ Untuk Info, dan Panduan Selengkapnya Tekan Tombol Panduan di Bawah, Terima kasih! Have Fun!!\n\n➥ Dikelola Oleh @Reeeeeezy
+➠ Invite __[Assistance](https://t.me/Zeed_RobotAss)__ Masuk Kedalam Grup Anda.
+➠ Untuk Info, dan Panduan Selengkapnya Tekan Tombol Panduan di Bawah, Terima kasih! Have Fun!!
+┈──────────────────────┈
+➥ Dikelola Oleh @Reeeeeezy
         """,
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
                     InlineKeyboardButton(
-                        "Panduan", url="https://t.me/ZeedGoodBoys/14")
+                        "Tambahkan Saya Ke Group Anda", url="https://t.me/LibraMusic_bot?startgroup=true")
                   ],[
                     InlineKeyboardButton(
-                        "Channel", url="https://t.me/Rezy_IsBack"
+                        "Panduan", url="https://t.me/ZeedGoodBoys/21"
                     ),
                     InlineKeyboardButton(
-                        "Group Music", url="https://t.me/ZeeedMusic") 
+                        "Channel", url="https://t.me/Rezy_IsBack") 
                   ],[
                     InlineKeyboardButton(
                         "Instagram", url="https://www.instagram.com/ridhoalfahrezi._"
@@ -36,12 +39,12 @@ __Aku Adalah Zeed Music Bot, Bot Sumber Terbuka Yang Memungkinkan Anda Untuk Men
 
 @Client.on_message(filters.command("reload") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
-      await message.reply_text("""'Zeed - Music' **Sedang Online**""",
+      await message.reply_text("""'Libra Robot' **Sedang Online**""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Group Music", url="https://t.me/ZeeedMusic"
+                        "Channel", url="https://t.me/Rezy_IsBack"
                     ),
                     InlineKeyboardButton(
                         "Rezy 🇲🇨", url="https://t.me/Reeeeeezy"
@@ -53,7 +56,7 @@ async def gstart(_, message: Message):
 
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
-      await message.reply_text("""'Zeed - Musik' **Sedang Online**""",
+      await message.reply_text("""'Libra Robot' **Sedang Online**""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -61,7 +64,7 @@ async def gstart(_, message: Message):
                         "Instagram", url="https://www.instagram.com/ridhoalfahrezi._") 
                 ],[
                     InlineKeyboardButton(
-                        "Group Music", url="https://t.me/ZeeedMusic"
+                        "Channel", url="https://t.me/Rezy_IsBack"
                     )
                 ]
             ]
